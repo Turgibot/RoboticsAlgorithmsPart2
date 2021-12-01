@@ -670,4 +670,247 @@ class Chap5_28(OPU_Slide):
         self.add(title, secondary_title, img, txt1, img1 , x, y, img2, img3)
         self.wait()
 
+class Chap5_29(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.1.2: Body Jacobian ", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/body_def.png').scale(1).shift(UP*1.4)
+        img2 = ImageMobject('../images/body_def2.png').scale(1).next_to(img1, DOWN)
+
+        self.add(title, secondary_title, img1, img2)
+        self.wait()
+
+class Chap5_30(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.1.4: Relationship between the Space and Body Jacobian ", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/adjoint.png').scale(1).shift(DOWN*0.5)
+
+        self.add(title, secondary_title, img1)
+        self.wait()
+
+
+
+class Chap5_31(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/adjoint.png').scale(1).shift(DOWN*0.5)
+
+        txt1= Tex(r"The Jacobian allows us to identify postures at which the robot's end-effector loses the ability to move instantaneously in one or more directions.").scale(0.5).shift(UP*1.2)
+        txt2= Tex(r"Such a posture is called a kinematic singularity, or simply a singularity.").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
+        txt3= Tex(r"Singular postures correspond to those values of $\theta$ at which the rank of $J(\theta)$ drops below the maximum rank.").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
+        txt4= Tex(r"at such postures the tip frame loses the ability to generate instantaneous spatial velocities in in one or more dimensions.").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
+        txt5= Tex(r"The mathematical definition of a kinematic singularity is independent of the choice of body or space Jacobian.").scale(0.5).next_to(txt4, DOWN).align_to(txt1, LEFT)
+        txt6= Tex(r"At a singularity, a robotic arm loses one or more degrees of freedom.").scale(0.5).next_to(txt5, DOWN).align_to(txt1, LEFT)
+        
+
+        self.add(title, secondary_title, txt1, txt2, txt3, txt4, txt5, txt6)
+        self.wait()
+
+
+class Chap5_32(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/adjoint.png').scale(1).shift(DOWN*0.5)
+
+        txt1= Tex(r"The problem of forward kinematics gives us the configuration of the EE given its joint values.").scale(0.5).shift(UP*1.2)
+        txt2= Tex(r"Next chapter deals with the inverse kinemtics problem.").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
+        txt3= Tex(r"Inverse kinematics is the problem of finding the joint values for a desired EE configuration").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
+        txt4= Tex(r"Using the inverse jacobian we can also find the velocity of the joints for a desired EE velocity.").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
+        txt5= Tex(r"We will be able to plan and execute trajectories.").scale(0.5).next_to(txt4, DOWN).align_to(txt1, LEFT)
+        txt6= Tex(r"If the trajectory passes trough a singularity the EE might get stuck or behave unpredictedly.").scale(0.5).next_to(txt5, DOWN).align_to(txt1, LEFT)
+        txt7= Tex(r"Because singularities significantly deteriorate the performance of a chain robot, you must learn how to identify them and never move close to them, when planning the EE's path.").scale(0.5).next_to(txt6, DOWN).align_to(txt1, LEFT)
+        
+
+        self.add(title, secondary_title, txt1, txt2, txt3, txt4, txt5, txt6, txt7)
+        self.wait()
+
+
+
+class Chap5_33(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/adjoint.png').scale(1).shift(DOWN*0.5)
+
+        txt1= Tex(r"Let's say we would like to move the EE along a path with constant speed.").scale(0.5).shift(UP*1.2)
+        txt2= Tex(r"The joint velocities are calculated from : $\dot{\theta} = J^{-1} \dot{V}$.").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
+        txt3= Tex(r"where $J^{-1} = \frac{1}{det(J)}Adj(J)$").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
+        txt4= Tex(r"When the robot is in a singularity there is no solution for calculating $J^{-1}$").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
+        txt5= Tex(r"In singularity, $J$ becomes singular and $det(J) = 0$ so it is impossible to calculate $J^{-1}$.").scale(0.5).next_to(txt4, DOWN).align_to(txt1, LEFT)
+        txt6= Tex(r"If the trajectory passes close to a singularity the determinant value is close to zero.").scale(0.5).next_to(txt5, DOWN).align_to(txt1, LEFT)
+        txt7= Tex(r"This results in high joints velocities (division by a very small number).Such high joint velocities may be unexpected and can pose safety risks in the case of big, fast industrial robots.").scale(0.5).next_to(txt6, DOWN).align_to(txt1, LEFT)
+        
+
+        self.add(title, secondary_title, txt1, txt2, txt3, txt4, txt5, txt6, txt7)
+        self.wait()
+
+
+
+class Chap5_34(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        self.add(title, secondary_title)
+          #include video
+        cap = cv2.VideoCapture("../media/videos/singularity1.mp4")
+
+        flag, frame = cap.read()
+        while not flag:
+            pass
+        while flag :
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame).scale(0.8).shift(DOWN*0.6)
+                self.add(frame_img)
+                self.wait(0.042)
+                self.remove(frame_img)
+            
+        cap.release()
+        self.wait()
+
+       
+
+
+class Chap5_35(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/adjoint.png').scale(1).shift(DOWN*0.5)
+
+        txt1= Tex(r"To find the singularity configurations we can use a mathematical approach:").scale(0.5).shift(UP*1.2)
+        txt2= Tex(r"1. Calculate the $\theta$s for which the jacobian determinant zeros.").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
+        txt3= Tex(r"2. Calculate the $\theta$s for which the jacobian becomes singular (rank < 6)").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
+        txt4= Tex(r"Or by a visual inspection approach.").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
+        txt5= Tex(r"5 examples in the book and in the next slides.").scale(0.5).next_to(txt4, DOWN).align_to(txt1, LEFT)
+        
+
+        self.add(title, secondary_title, txt1, txt2, txt3, txt4, txt5)
+        self.wait()
+
+
+
+class Chap5_36(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/sing1.png').scale(1.2).shift(LEFT*3.5)
+        img2 = ImageMobject('../images/js4.png').scale(1.2).next_to(img1, DOWN)
+        img3 = ImageMobject('../images/sing11.png').scale(1.2).shift(RIGHT*2.5)
+
+        self.add(title, secondary_title, img1, img3)
+        self.wait()
+
+
+
+class Chap5_37(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/sing2.png').scale(1.2).shift(LEFT*3.5)
+        img2 = ImageMobject('../images/js4.png').scale(1.2).next_to(img1, DOWN)
+        img3 = ImageMobject('../images/sing22.png').scale(1.2).shift(RIGHT*2.5)
+
+        self.add(title, secondary_title, img1, img3)
+        self.wait()
+
+
+
+
+class Chap5_38(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/sing3.png').scale(1.2).shift(LEFT*3.5)
+        img2 = ImageMobject('../images/js4.png').scale(1.2).next_to(img1, DOWN)
+        img3 = ImageMobject('../images/sing32.png').scale(1.2).shift(RIGHT*2.5)
+
+        self.add(title, secondary_title, img1, img3)
+        self.wait()
+
+
+
+class Chap5_39(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/sing4.png').scale(1.2).shift(LEFT*3.5+DOWN*0.3)
+        img2 = ImageMobject('../images/js4.png').scale(1.2).next_to(img1, DOWN)
+        img3 = ImageMobject('../images/sing41.png').scale(1.2).shift(RIGHT*3)
+
+        self.add(title, secondary_title, img1, img3)
+        self.wait()
+
+
+class Chap5_40(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.3: Singularity Analysis", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/sing5.png').scale(1.2).shift(DOWN*0.3)
+        self.add(title, secondary_title, img1)
+        self.wait()
+
 
