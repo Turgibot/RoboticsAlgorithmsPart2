@@ -914,3 +914,88 @@ class Chap5_40(OPU_Slide):
         self.wait()
 
 
+class Chap5_41(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.4: Manipulability", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/eliips2.png').scale(1).shift(DOWN*2.3)
+        self.add(title, secondary_title, img1)
+
+
+        txt1= Tex(r"Manipulability is the robots EE ability to translate or rotate in one or more directions.").scale(0.5).shift(UP*1.4)
+        txt2= Tex(r"We would like to know, if a particular robot configuration is singular or not?").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
+        txt3= Tex(r"And how close is a nonsingular configuration to a singular one?").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
+        txt4= Tex(r"We can use the manipulability ellipsoid to visualize geometrically the directions in which the EE moves with least effort or with greatest effort.").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
+        
+
+        self.add(title, secondary_title, txt1, txt2, txt3, txt4)
+        self.wait()
+
+
+
+class Chap5_42(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.4: Manipulability", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/ellips1.png').scale(1).shift(DOWN*2.3)
+        self.add(title, secondary_title, img1)
+
+
+        txt1= Tex(r"The volume of the ellipsoid is proportional to the EE manipulability.").scale(0.5).shift(UP*1.4)
+        txt2= Tex(r"We can create two ellipsoids, one for describing the angular velocity and the second one is for the linear velocity.").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
+        txt3= Tex(r"For $J(\theta) = \begin{bmatrix} J_w(\theta)\\J_v(\theta)\end{bmatrix}$ where $J_w$ is the first 3 rows and $J_v$ is the last 3 rows.").scale(0.5).next_to(txt2, DOWN).align_to(txt1, LEFT)
+        txt4= Tex(r"The square symentric and positive matrix $A = JJ^T$ (for $J = J_w$ or $J = J_v$) is used to define the the 3 dimensional ellipsoid.").scale(0.5).next_to(txt3, DOWN).align_to(txt1, LEFT)
+        
+
+        self.add(title, secondary_title, txt1, txt2, txt3, txt4)
+        self.wait()
+
+
+
+class Chap5_43(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.4: Manipulability", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/ellips1.png').scale(1).shift(DOWN*1)
+        self.add(title, secondary_title, img1)
+
+
+        txt1= Tex(r"Let $v_i$ and $\lambda_i, i = 1,2,3$ be the eigenvectors and eigenvalues of $A = JJ^T$ respectively.").scale(0.5).shift(UP*1.4)
+        txt2= Tex(r"Then $\sqrt{\lambda_i}$ is the length and $v_i$ is the direction of the ellipsoid semi-axis.").scale(0.5).next_to(txt1, DOWN).align_to(txt1, LEFT)
+       
+
+        self.add(title, secondary_title, txt1, txt2)
+        self.wait()
+
+
+
+class Chap5_44(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 5: Velocity Kinematics and Statics").shift(UP*3).scale(0.65)
+        secondary_title = Text("5.4: Manipulability", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img1 = ImageMobject('../images/lamb1.png').scale(1.1).shift(UP*0.7)
+        img2 = ImageMobject('../images/lamb2.png').scale(1.1).next_to(img1, DOWN)
+        self.add(title, secondary_title, img1, img2)
+        self.wait()
+
+
